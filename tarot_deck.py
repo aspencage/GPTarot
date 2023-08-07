@@ -3,6 +3,7 @@
 import itertools
 import random
 from enum import Enum
+from copy import deepcopy
 
 lower_first = lambda s : s[0].lower() + s[1:]
 upper_first = lambda s : s[0].upper() + s[1:]
@@ -66,7 +67,7 @@ class Deck:
         
             self.cards.extend(self.minor_arcana)
 
-        self.base_cards = self.cards
+        self.base_cards = deepcopy(self.cards)
         self.unshuffled_cards = self.base_cards
         self.shuffle()
 
