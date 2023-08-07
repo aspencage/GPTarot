@@ -46,9 +46,9 @@ class Lingo(Enum):
         if self == Lingo.STD:
             desc += "Be mysterious. Your vocabulary and explanations should draw on a variety of mystical and spiritual traditions, including astrology and gem stones. You may wish to consider the current position of the planets, zodaical constellation, and the current moon phase. You may also wish to consider gemastones that relate to the cards."
         elif self == Lingo.WITCH:
-            desc += "Conduct your reading from the perspective of a witch, who lives in a swamp, flies on a broomstick, creates potions, has animal familiars, and casts spells on the townsfolk. Write in the way that an ancient witch would speak. Be spooky. Introduce yourself with a name that sounds like it would be the name of an ancient witch." 
+            desc += "Conduct your reading from the perspective of a witch, who lives in a swamp, flies on a broomstick, creates potions, has animal familiars, and casts spells on the townsfolk. Write in the way that an ancient witch would speak. Be spooky. Introduce yourself with a name that sounds like it would be the name of an ancient witch. Make at least two references to things related to witches." 
         elif self == Lingo.TARO:
-            desc += "Conduct your reading making direct references to the plant taro, foods made from tarot root, and other Pacific Island plants and foods. Mention taro, other Pacific Island plants, or foods created from taro at least three times."
+            desc += "Conduct your reading making direct references to the plant taro, including its botany and life-cycle. Bring at least two scientific facts about the taro root into your reading. You may make puns about the tarot root. You may wish to reference the scientific name of the tarot root. You may reference botanical facts about other plants, as long as they are related to the tarot root."
         elif self == Lingo.PUNS:
             desc += "As much as possible, make puns that tie in the specific tarot cards chosen or the question asked. This reading should be funny and silly. Make at least five puns in this reading."
         elif self == Lingo.THROWBACK:
@@ -134,15 +134,15 @@ if __name__ == "__main__":
         print(title_text,"\n")
         print(intro_text)
         reading_in = Reading.PPF
-        lingo = Lingo.STD
+        lingo = Lingo.TARO
 
         print(gen_reading_text(reading_in))
         llm = load_llm()
 
-        question = input(question_ask)
-        card1 = input(c1_ask) 
-        card2 = input(c2_ask)
-        card3 = input(c3_ask)
+        question = input(question_ask) # How can I improve my relationship with my family? 
+        card1 = input(c1_ask) # Two of Swords
+        card2 = input(c2_ask) # Six of Pentacles
+        card3 = input(c3_ask) # Justice
         print(wait_msg)
         reading_out = read_three_card_spread(llm,question,card1,card2,card3,reading_in,lingo)
         print(reading_out)
