@@ -1,0 +1,14 @@
+name: gptarot
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - langchain
+  - pandas
+  - streamlit
+  - pip 
+
+  - pip:
+    - openai
+    

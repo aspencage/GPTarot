@@ -29,6 +29,9 @@ else:
 cs = [c1.name,c2.name,c3.name]
 duplicate_check = lambda l: sum(Counter(l).values()) > len(Counter(l))
 
+with st.spinner("Accessing large language model tarot reader... 📚🔎"):
+    llm = load_llm()
+
 if st.button("Read the cards"):
 
     if reading == Reading.NULL:
@@ -41,7 +44,7 @@ if st.button("Read the cards"):
 
     else:
         with st.spinner(wait_msg):
-            reading = read_three_card_spread(question,c1,c2,c3)
+            reading = read_three_card_spread(llm, question,c1,c2,c3)
         
         st.write("My reading for you:")
         st.write(reading)

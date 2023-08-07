@@ -31,8 +31,9 @@ class Reading(Enum):
     def __str__(self):
         return self.value
     
-
-llm = OpenAI(temperature=0.9)
+def load_llm(temp=0.9):
+    llm = OpenAI(temperature=temp)
+    return llm
 
 title_text = "🌱🔮✨ Welcome to GPTarot ✨🔮🌱"
 
@@ -67,7 +68,7 @@ def gen_reading_text(reading:Reading):
     return reading_text
 
 
-def read_three_card_spread(q,c1,c2,c3,reading=Reading.PPF):
+def read_three_card_spread(llm, q,c1,c2,c3,reading=Reading.PPF):
         m1,m2,m3 = reading.meanings
 
         template_text='''We have a classic tarot card deck with both major and minor arcana. You are the tarot card reader. You use an extremely witchy and magical vocabulary. We are doing a {reading} three card draw. I want to ask the cards 
@@ -100,11 +101,12 @@ if __name__ == "__main__":
         reading_in = Reading.BMS # or BMS
 
         print(gen_reading_text(reading_in))
+        llm = load_llm()
 
         question = input(question_ask)
         card1 = input(c1_ask) 
         card2 = input(c2_ask)
         card3 = input(c3_ask)
         print(wait_msg)
-        reading_out = read_three_card_spread(question,card1,card2,card3,reading_in)
+        reading_out = read_three_card_spread(llm, question,card1,card2,card3,reading_in)
         print(reading_out)
