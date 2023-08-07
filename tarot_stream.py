@@ -9,9 +9,11 @@ st.set_page_config(page_title="🔮 GPTarot 🔮")
 st.title(title_text)
 st.write(intro_text)
 
-reading = st.selectbox("Which type of Tarot spread shall we do?", Reading,index=0,key="spread")
+reading_type = st.selectbox("Which type of Tarot spread shall we do?", Reading,index=0,key="spread")
 
-st.write(gen_reading_text(reading))
+st.write(gen_reading_text(reading_type))
+
+lingo = st.selectbox("What tone and vocabulary should I use in the reading?", Lingo,index=0,key="lingo")
 
 deck = Deck()
 question = st.text_input(question_ask)
@@ -19,7 +21,7 @@ question = st.text_input(question_ask)
 
 if st.checkbox("Randomly draw my three cards"):
     c1,c2,c3 = deck.draw_random_cards(3)
-    st.write(f"Your three randomly drawn cards are: `{c1}`,`{c2}`, and `{c3}`.")
+    # st.write(f"Your three randomly drawn cards are: `{c1}`,`{c2}`, and `{c3}`.")
 
 else: 
     c1 = st.selectbox(c1_ask,deck.base_cards,key="card_select_1") 
@@ -34,7 +36,7 @@ with st.spinner("Accessing large language model tarot reader... 📚🔎"):
 
 if st.button("Read the cards"):
 
-    if reading == Reading.NULL:
+    if reading_type == Reading.NULL:
         st.write("You must select which type of spread you would like before I can conduct a reading.")
 
     elif duplicate_check(cs):
@@ -44,7 +46,7 @@ if st.button("Read the cards"):
 
     else:
         with st.spinner(wait_msg):
-            reading = read_three_card_spread(llm, question,c1,c2,c3)
+            reading = read_three_card_spread(llm,question,c1,c2,c3,reading_type, lingo)
         
         st.write("My reading for you:")
         st.write(reading)

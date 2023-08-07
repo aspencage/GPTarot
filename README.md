@@ -9,10 +9,9 @@
 * After meeting the requirements below, you can run GPTarot with a graphical user inferface by navigating to the repository and running `streamlit run tarot_stream.py` on the command line.
 * Alternatively, if you prefer a simple presentation, you can simply run `gptarot.py` on the command line. 
 
-OPENAI_API_KEY
 **Requirements:**
 1. Have an OpenAI API account and set your machine's `OPENAI_API_KEY` properly.
-2. Install the requisite Python packages in the `environment.yml` file. The packages that are not part of a typical Python data stack are: `langchain`, `streamlit`, `openai`. I recommend simply creating a Conda environment from this file directly with `mamba env create -f environment.yml`.
+2. Install the requisite Python packages in the `environment.yml` file. The packages that are not part of a typical Python data stack are: `langchain`, `streamlit`, `openai`, and `tiktoken`. I recommend simply creating a Conda environment from this file directly with `mamba env create -f environment.yml`.
 
 **Forthcoming features**: 
 * Web-hosted version behind an authentication page (to avoid bot spam), which will alow for use by anyone interested.

@@ -5,10 +5,8 @@ channels:
 dependencies:
   - python=3.11
   - langchain
+  - openai
+  - tiktoken
   - pandas
   - streamlit
-  - pip 
 
-  - pip:
-    - openai
-    
