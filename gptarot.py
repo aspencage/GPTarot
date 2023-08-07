@@ -129,14 +129,18 @@ def read_three_card_spread(llm:OpenAI,q:str,c1:str,c2:str,c3:str,reading=Reading
 
         return(r.strip())
 
+# TODO main function(), including interactivity for spread and lingo
+
 
 if __name__ == "__main__":
         print(title_text,"\n")
-        print(intro_text)
+        print(intro_text.strip())
+        print("\n")
         reading_in = Reading.PPF
         lingo = Lingo.TARO
 
-        print(gen_reading_text(reading_in))
+        print(gen_reading_text(reading_in).strip())
+        print("\n")
         llm = load_llm()
 
         question = input(question_ask) # How can I improve my relationship with my family? 
