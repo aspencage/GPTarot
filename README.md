@@ -4,6 +4,11 @@
 
 `GPTarot` is a just-for-fun project getting ChatGPT to conduct three card tarot readings. All you need to do is choose your spread, ask a question, and choose three cards (or let randomization do the thinking for you). I recommend drawing randomly from a real tarot deck if you have one onhand. GPTarot will do the rest.
 
+**Customizations:**
+* In addition to asking GPTarot your question with particular cards, you can select the tarot spread and tone for your reading.  
+* *Spreads*: Currently, GPTarot can do a Past, Present, Future or a Body, Mind, Spirit Tarot spread. 
+* *Tones*: Currently, GPTarot can conduct your reading along one of the following themes: mystical, witchy, taro root-themed, pun-oriented, or 90s pop culture references.
+
 **Running GPTarot:**
 * Currently, you must run the code for GPTarot on your local machine.
 * After meeting the requirements below, you can run GPTarot with a graphical user inferface by navigating to the repository and running `streamlit run tarot_stream.py` on the command line.
