@@ -9,4 +9,7 @@ dependencies:
   - tiktoken
   - pandas
   - streamlit
+  - pip
 
+  - pip:
+    - streamlit-authenticator
