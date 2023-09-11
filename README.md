@@ -11,7 +11,7 @@
 
 **Experience GPTarot online:**
 * GPTarot is now hosted on an AWS EC2 instance and can be accessed live.
-* Current address: http://13.59.230.190:8501/.
+* Current address: http://3.145.153.72:8501/.
 * GPTarot will be hooked up to a vanity domain in the near future.
 
 **Run GPTarot yourself:**
