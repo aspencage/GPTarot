@@ -11,7 +11,7 @@
 
 **Experience GPTarot online:**
 * GPTarot is now hosted on an AWS EC2 instance and can be accessed live.
-* Current address: http://3.145.153.72:8501/.
+* Current address: http://gptarot.aspencage.com:8501/.
 * GPTarot will be hooked up to a vanity domain in the near future.
 
 **Run GPTarot yourself:**
@@ -23,7 +23,7 @@
   * 2. Install the requisite Python packages in the `environment.yml` file. The packages that are not part of a typical Python data stack are: `langchain`, `streamlit`, `openai`, and `tiktoken`. I recommend simply creating a Conda environment from this file directly with `mamba env create -f environment.yml`.
 
 **Forthcoming features**: 
-* Vanity domain for the web-hosted GPTarot
+* Port forwarding for the hosted GPTarot
 * Tweaks for convenience and readability
 * Options to download and share your reading
 * DALL-E visualizations related to your reading?
