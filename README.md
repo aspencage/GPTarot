@@ -10,9 +10,8 @@
 * *Tones*: Currently, GPTarot can conduct your reading along one of the following themes: mystical, witchy, taro root-themed, pun-oriented, or 90s pop culture references. Let me know if you have any requests for additional tones!
 
 **Experience GPTarot online:**
-* GPTarot is now hosted on an AWS EC2 instance and can be accessed live.
-* Current address: http://gptarot.aspencage.com/.
-* GPTarot will be hooked up to a vanity domain in the near future.
+* http://gptarot.aspencage.com/.
+* Hosting: AWS EC2 instance and Route 53 domain with Apache2 configuration.
 
 **Run GPTarot yourself:**
 * You can also run the code for GPTarot on your local machine!
