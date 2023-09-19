@@ -75,7 +75,7 @@ question_ask = "So, what question would you like to ask the cards? "
 c1_ask = "What is your first card? "
 c2_ask = "What is your second card? "
 c3_ask = "What is your third card? "
-wait_msg = "\nGive me a moment to listen to the cards and to drink from the font of documented knowledge... 🧘‍\n"
+wait_msg = "\nGive me a moment to listen to the cards and to drink from the fount of documented knowledge... 🧘‍\n"
      
 intro_text = textwrap.dedent(f"""
     Thank you for allowing me to read your cards.
