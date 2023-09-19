@@ -23,7 +23,6 @@
   * 2. Install the requisite Python packages in the `environment.yml` file. The packages that are not part of a typical Python data stack are: `langchain`, `streamlit`, `openai`, and `tiktoken`. I recommend simply creating a Conda environment from this file directly with `mamba env create -f environment.yml`.
 
 **Forthcoming features**: 
-* Port forwarding for the hosted GPTarot
 * Tweaks for convenience and readability
 * Options to download and share your reading
 * DALL-E visualizations related to your reading?
