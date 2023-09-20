@@ -86,7 +86,7 @@ def main():
 
     if st.session_state.back_clicked:
         st.write("")
-        st.write("🧚 Welcome! GPTarot only works for humans, not bots. Log in to show us that you are indeed a human. 🌳🍃🦌✨")
+        st.write("🧚 Welcome! GPTarot only works for humans, not bots. Log in to show us that you are indeed a human. 🍃")
         st.write("")
         _, col1, col2, _ = st.columns([1,1,1,1])
 
