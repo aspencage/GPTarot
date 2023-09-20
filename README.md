@@ -5,9 +5,9 @@
 `GPTarot` is a just-for-fun project getting ChatGPT to conduct three card tarot readings. All you need to do is choose your spread and tone, ask a question, and pick three cards (or let randomization do the thinking for you). I recommend drawing randomly from a real tarot deck if you have one onhand. GPTarot will do the rest.
 
 **Customizations:**
-* In addition to asking GPTarot your question with particular cards, you can select the tarot spread and tone for your reading.  
+* In addition to asking GPTarot your question with particular cards, you can select the type of tarot spread and theme for your reading.  
 * *Spreads*: Currently, GPTarot can do a Past, Present, Future or a Body, Mind, Spirit Tarot spread. 
-* *Tones*: Currently, GPTarot can conduct your reading along one of the following themes: mystical, witchy, taro root-themed, pun-oriented, or 90s pop culture references. Let me know if you have any requests for additional tones!
+* *Theme*: Currently, GPTarot can conduct your reading along one of the following themes: mystical, witchy, taro root-themed, pun-oriented, or 90s pop culture references. Let me know if you have any requests for additional tones!
 
 **Experience GPTarot online:**
 * http://gptarot.aspencage.com/.
@@ -22,6 +22,7 @@
   * 2. Install the requisite Python packages in the `environment.yml` file. The packages that are not part of a typical Python data stack are: `langchain`, `streamlit`, `openai`, and `tiktoken`. I recommend simply creating a Conda environment from this file directly with `mamba env create -f environment.yml`.
 
 **Forthcoming features**: 
-* Tweaks for convenience and readability
+* Reset option on reading page
 * Options to download and share your reading
-* DALL-E visualizations related to your reading?
+* DALL-E visualizations related to your reading
+* Have a suggestion? Please share! 

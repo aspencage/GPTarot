@@ -8,11 +8,11 @@ from tarot_deck import *
 def tarot_stream():
     st.write(intro_text)
 
-    reading_type = st.selectbox("Which type of Tarot spread shall we do?", Reading,index=0,key="spread")
+    reading_type = st.selectbox("Which type of Tarot spread shall we do?", Reading, index=0, key="spread")
 
     st.write(gen_reading_text(reading_type))
 
-    lingo = st.selectbox("What tone and vocabulary should I use in the reading?", Lingo,index=0,key="lingo")
+    lingo = st.selectbox("What tone and vocabulary should I use in the reading?", Lingo, index=0, key="lingo")
 
     deck = Deck()
     question = st.text_input(question_ask)
