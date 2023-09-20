@@ -69,7 +69,7 @@ def load_llm(temp=0.9, max_tokens=-1):
     return llm
 
 
-title_text = "🌱🔮✨ Welcome to GPTarot ✨🔮🌱"
+title_text = "🌱🔮✨ GPTarot ✨🔮🌱"
 
 question_ask = "So, what question would you like to ask the cards? "
 c1_ask = "What is your first card? "
