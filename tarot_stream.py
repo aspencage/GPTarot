@@ -5,6 +5,13 @@ from collections import Counter
 from gptarot import *
 from tarot_deck import *
 
+
+def stream_draw():
+    drawn = Deck().draw_random_cards(3)
+    for ix,c in enumerate(drawn):
+        st.session_state[f"c{ix+1}"] = c
+
+
 def tarot_stream():
     st.write(intro_text)
 
@@ -14,18 +21,24 @@ def tarot_stream():
 
     lingo = st.selectbox("What tone and vocabulary should I use in the reading?", Lingo,index=0,key="lingo")
 
-    deck = Deck()
     question = st.text_input(question_ask)
 
+    if "c1" not in st.session_state:
+        stream_draw()
 
-    if st.checkbox("Randomly draw my three cards"):
-        c1,c2,c3 = deck.draw_random_cards(3)
-        # st.write(f"Your three randomly drawn cards are: `{c1}`,`{c2}`, and `{c3}`.")
+    if st.checkbox("Randomly draw my three cards",key="rand_box"):
+        if st.button("Redraw cards"):
+            stream_draw()
+
+        c1 = st.session_state.c1
+        c2 = st.session_state.c2
+        c3 = st.session_state.c3
+        st.write(f"Your three randomly drawn cards are: `{c1}`,`{c2}`, and `{c3}`.")
 
     else: 
-        c1 = st.selectbox(c1_ask,deck.base_cards,key="card_select_1") 
-        c2 = st.selectbox(c2_ask,deck.base_cards,key="card_select_2")
-        c3 = st.selectbox(c3_ask,deck.base_cards, key="card_select_3")
+        c1 = st.selectbox(c1_ask,Deck().base_cards,key="card_select_1",index=0) 
+        c2 = st.selectbox(c2_ask,Deck().base_cards,key="card_select_2",index=1)
+        c3 = st.selectbox(c3_ask,Deck().base_cards, key="card_select_3",index=2)
 
     cs = [c1.name,c2.name,c3.name]
     duplicate_check = lambda l: sum(Counter(l).values()) > len(Counter(l))
@@ -49,3 +62,6 @@ def tarot_stream():
             
             st.write("My reading for you:")
             st.write(reading)
+
+if __name__ == "__main__":
+    tarot_stream()
