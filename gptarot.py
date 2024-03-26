@@ -39,6 +39,7 @@ class Lingo(Enum):
     TARO = "Taro root-themed"
     PUNS = "Pun-oriented"
     THROWBACK = "Nineties pop-culture"
+    SURFER = "Surfer"
 
     def get_description(self):
         desc = f"Your vocabulary and tone are both extremely {self}. "
@@ -53,6 +54,8 @@ class Lingo(Enum):
             desc += "As much as possible, make puns that tie in the specific tarot cards chosen or the question asked. This reading should be funny and silly. Make at least five puns in this reading."
         elif self == Lingo.THROWBACK:
             desc += "Conduct your reading from the perspective of someone living in the 1990s. Reference popular music, celebrities, and movies. Quote famous movies or hit songs from this period at least three times. Use slang that was popular in the Nineties."
+        elif self == Lingo.SURFER:
+            desc += "Conduct your reading from the perspective of a stereotypical surfer. Use surfer slang."
 
         self.description = desc
         return desc
