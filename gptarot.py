@@ -1,9 +1,9 @@
 from enum import Enum
 import textwrap
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.prompts import PromptTemplate 
 from langchain.chains import LLMChain
-
+import streamlit as st
 
 class Reading(Enum):
 
@@ -128,11 +128,9 @@ def read_three_card_spread(llm:OpenAI,q:str,c1:str,c2:str,c3:str,reading=Reading
 
         chain = LLMChain(llm=llm, prompt=prompt)
 
-        r = chain.run(d)
+        r = chain.invoke(d)
 
-        return(r.strip())
-
-# TODO main function(), including interactivity for spread and lingo
+        return(r["text"].strip())
 
 
 if __name__ == "__main__":
