@@ -68,7 +68,7 @@ class Lingo(Enum):
 
 
 def load_llm(temp=0.9, max_tokens=-1):
-    llm = OpenAI(temperature=temp, max_tokens=max_tokens)
+    llm = OpenAI(temperature=temp, max_tokens=max_tokens, model_name="gpt-3.5-turbo-instruct")
     return llm
 
 
