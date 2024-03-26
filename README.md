@@ -10,8 +10,8 @@
 * *Theme*: Currently, GPTarot can conduct your reading along one of the following themes: mystical, witchy, taro root-themed, pun-oriented, 90s pop culture references, or surfer. Let me know if you have any requests for additional tones!
 
 **Experience GPTarot online:**
-* http://gptarot.aspencage.com/.
-* Hosting: AWS EC2 instance and Route 53 domain with Apache2 configuration.
+* http://gptarot.aspencage.com:8501/
+* Hosting: AWS EC2 instance and Route 53 domain.
 
 **Run GPTarot yourself:**
 * You can also run the code for GPTarot on your local machine!
@@ -24,6 +24,7 @@
   * 2. Install the requisite Python packages in the `environment.yml` file. The packages that are not part of a typical Python data stack are: `langchain`, `streamlit`, `openai`, `tiktoken`, and `langchain-openai`. I recommend simply creating a Conda environment from this file directly with `mamba env create -f environment.yml`.
 
 **Forthcoming features**: 
+* Add Apache2 configuration with SSL.
 * Reset option on reading page
 * Options to download and share your reading
 * DALL-E visualizations related to your reading
