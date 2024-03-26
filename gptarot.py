@@ -55,7 +55,7 @@ class Lingo(Enum):
         elif self == Lingo.THROWBACK:
             desc += "Conduct your reading from the perspective of someone living in the 1990s. Reference popular music, celebrities, and movies. Quote famous movies or hit songs from this period at least three times. Use slang that was popular in the Nineties."
         elif self == Lingo.SURFER:
-            desc += "Conduct your reading from the perspective of a stereotypical surfer. Use surfer slang."
+            desc += "Conduct your reading from the perspective of a stereotypical surfer. Use surfer slang like shredding the gnar and getting tubed. Make surfer and ocean sound effects and metaphors. You may digress to talk about crazy waves you've ridden in the past."
 
         self.description = desc
         return desc
