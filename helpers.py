@@ -1,6 +1,10 @@
 import streamlit as st 
 from tarot_stream import tarot_stream
 import yaml
+import streamlit_authenticator as stauth
+import yaml
+from yaml.loader import SafeLoader
+
 
 YAML_PATH = 'credentials.yml'
 
@@ -54,3 +58,43 @@ def register(authenticator, config):
     except Exception as e:
         st.error(e)
     show_back()
+
+
+def manage_authentication():
+    with open(YAML_PATH) as file:
+        config = yaml.load(file, Loader=SafeLoader)
+
+    authenticator = stauth.Authenticate(
+        config['credentials'],
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days']
+    )
+
+    # initial settings
+    if "back_clicked" not in st.session_state:
+        st.session_state.back_clicked = True
+
+    if "create_clicked" not in st.session_state:
+        st.session_state.create_clicked = False
+
+    if "login_clicked" not in st.session_state:
+        st.session_state.login_clicked = False
+
+    if st.session_state.back_clicked:
+        st.write("")
+        st.write("🧚 Welcome! GPTarot only works for humans, not bots. Log in to show us that you are indeed a human. 🍃")
+        st.write("")
+        _, col1, col2, _ = st.columns([1,1,1,1])
+
+        with col1:
+            st.button("Create account", key="create", on_click=click_create)
+
+        with col2:
+            st.button("Log in", key="login", on_click=click_login)
+
+    if st.session_state.create_clicked:
+        register(authenticator, config)
+
+    if st.session_state.login_clicked:
+        authenticate(authenticator)
