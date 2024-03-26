@@ -57,6 +57,9 @@ def tarot_stream():
             st.write(dup_str)
 
         else:
+            if not len(question):
+                st.write("Because you did not ask me a specific question, I will give you a general reading based on your cards.")
+
             with st.spinner(wait_msg):
                 reading = read_three_card_spread(llm,question,c1,c2,c3,reading_type, lingo)
             
